@@ -7,6 +7,9 @@ II/ Hướng dẫn cách chạy:
 1. Clone code về máy
 2. Cài đặt môi trường chạy nodeJS và vue
 npm install
+
+& 
+
 npm install -g vue-cli
 4. Mở folder training-backend bằng teminal và chạy lệnh sau :  mpn run dev
 Đây là folder chứa serve
