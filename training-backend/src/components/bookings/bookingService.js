@@ -36,11 +36,6 @@ async function checkBookingTable(idTable) {
         attributes: TABLE_ATTRIBUTES,
         raw: true,
     });
-    console.log('---------------------');
-    console.log('---------------------');
-    console.log('check: ', idTable, table.status, result.rows, result.count);
-    console.log('---------------------');
-    console.log('---------------------');
     if (table.status !== 'used') {
         if (result.count <= 1) {
             tableStatus = 'ready';
@@ -100,9 +95,8 @@ async function getListBooking(query) {
             whereQuery[0].and.push({ idTable });
         }
 
-        if (query.status) {
-            const { status } = query.status;
-            whereQuery[0].and.push(status);
+        if (query.status !== undefined) {
+            whereQuery[0].and.push({ status: query.status });
         }
 
         const result = await db.Booking.findAndCountAll({
@@ -119,7 +113,14 @@ async function getListBooking(query) {
                 attributes: TABLE_ATTRIBUTES,
             }],
         });
-        checkTimeBookBooking(result.rows[0]);
+        if (query.status !== undefined) {
+            console.log('---------------------');
+            console.log('---------------------');
+            console.log('kuuuuuugaaaaaa: ', whereQuery[0].and[0], whereQuery[0].and[1], whereQuery[0].and[2]);
+            console.log('---------------------');
+            console.log('---------------------');
+        }
+
         return { bookings: result.rows, total: result.count };
     } catch (error) {
         logger.error(`Error in getBookingListAndTotal ${error.message}`);

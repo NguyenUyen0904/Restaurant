@@ -5,8 +5,8 @@ import { productStore } from './store';
 
 export const initLoginForm = () => {
     const formValues = {
-        email: 'tientung@gmail.com',
-        password: '123456',
+        email: 'Supervisor1@gr2.com',
+        password: 'Uyen1234',
         // email: '',
         // password: '',
     };
