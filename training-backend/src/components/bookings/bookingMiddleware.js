@@ -7,7 +7,6 @@ import { ErrorCodes } from '../../helpers/constants';
 import { BOOKING_ATTRIBUTES } from './bookingConstant';
 import bookingService from './bookingService';
 
-
 const db = require('../../models');
 
 export async function checkExistBooking(req, res, next) {

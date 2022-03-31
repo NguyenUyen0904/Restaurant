@@ -13,7 +13,7 @@ mysql.createConnection({
     host: dbConfig.host || "127.0.0.1",
     port: dbConfig.post || "3306",
     user: dbConfig.username || "root",
-    password: dbConfig.password || "",
+    password: dbConfig.password || "password",
 }).then(connection => {
     connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName};`).then((res) => {
         console.info("Database create or successfully checked");
