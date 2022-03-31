@@ -9,6 +9,7 @@ II/ Hướng dẫn cách chạy:
     npm install
     npm install --save express
     npm install -g vue-cli
+    npm install -g babel-cli
 3. Kết nối database 
     * Mở MySQL Workbench -> Tạo 1 connection mới 
         "username": "root",
